@@ -49,6 +49,12 @@ public:
 
         tableView = new QTableView(SnapshotsDialog);
         tableView->setObjectName(QString::fromUtf8("tableView"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(tableView->sizePolicy().hasHeightForWidth());
+        tableView->setSizePolicy(sizePolicy);
+        tableView->setMinimumSize(QSize(256, 407));
 
         verticalLayout->addWidget(tableView);
 
@@ -75,11 +81,11 @@ public:
 
         label_2 = new QLabel(SnapshotsDialog);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy1);
         label_2->setMinimumSize(QSize(500, 400));
         QFont font;
         font.setPointSize(14);

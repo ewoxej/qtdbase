@@ -6,11 +6,11 @@
 
 class DischargeDialog : public QDialog
 {
-    Q_OBJECT
+   Q_OBJECT
 
 public:
-    DischargeDialog(QWidget *parent = Q_NULLPTR);
-    QString getValue();
+   DischargeDialog( QWidget *parent = Q_NULLPTR );
+   QDate getValue();
 private:
-    Ui::DischargeDialog ui;
+   Ui::DischargeDialog ui;
 };

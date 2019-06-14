@@ -1,12 +1,13 @@
 #include "discharge_dialog.h"
 
-DischargeDialog::DischargeDialog(QWidget *parent)
-    : QDialog(parent)
+DischargeDialog::DischargeDialog( QWidget *parent )
+   : QDialog( parent )
 {
-    ui.setupUi(this);
+   ui.setupUi( this );
+   ui.dateEdit->setDate( QDate::currentDate() );
 }
 
-QString DischargeDialog::getValue()
+QDate DischargeDialog::getValue()
 {
-   return ui.dateEdit->date().toString("dd.MM.yyyy");
+   return ui.dateEdit->date();
 }

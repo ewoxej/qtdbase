@@ -4,7 +4,7 @@
 #include <QtSql>
 #include <qfiledialog.h>
 #include "ui_snapshots_dialog.h"
-
+#include <qmessagebox.h>
 enum PatientsIndexes
 {
    eDB_ID,
@@ -29,14 +29,14 @@ class SnapshotsDialog : public QDialog
    Q_OBJECT
 
 public:
-    SnapshotsDialog(QWidget *parent,QItemSelection* sel);
-    void cleanSnapshots();
+   SnapshotsDialog( QWidget *parent, QItemSelection* sel );
+   void cleanSnapshots();
 public slots:
    void onAddPressed();
    void onDeletePressed();
-   void onTableViewItemSelected(QItemSelection, QItemSelection);
+   void onTableViewItemSelected( QItemSelection, QItemSelection );
 private:
-   void dataBaseInit(QString dbname);
+   void dataBaseInit( QString dbname );
    void setUiInit();
    Ui::SnapshotsDialog ui;
    QItemSelection* m_patientItem;

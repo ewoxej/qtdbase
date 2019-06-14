@@ -1,7 +1,9 @@
 #pragma once
 
 #include <QObject>
+#include <qmessagebox.h>
 #include "ui_add_dialog.h"
+
 struct PatientInfo
 {
    QString name;
@@ -16,7 +18,7 @@ class AddDialog : public QDialog
    Q_OBJECT
 
 public:
-   AddDialog(QWidget* parent = Q_NULLPTR);
+   AddDialog( QWidget* parent = Q_NULLPTR );
    PatientInfo getInfo();
    ~AddDialog();
 public slots:

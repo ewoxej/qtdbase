@@ -12,7 +12,7 @@ class MainWindow : public QMainWindow
 {
    Q_OBJECT
 public:
-   MainWindow(QWidget *parent = Q_NULLPTR);
+   MainWindow( QWidget *parent = Q_NULLPTR );
    QItemSelection getCurrentSelection();
 public slots:
    void onAddPressed();
@@ -21,9 +21,9 @@ public slots:
    void onDischarged();
    void onDeletePressed();
    void onInsertPatient();
-   void onTableViewItemSelected(QItemSelection, QItemSelection);
+   void onTableViewItemSelected( QItemSelection, QItemSelection );
 private:
-   void dataBaseInit(QString dbname);
+   void dataBaseInit( QString dbname );
    void deletePatientAndSnapshots();
    void setUiInit();
    Ui::DataBaseClass ui;
