@@ -28,22 +28,22 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btnEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btnSnap">
         <property name="enabled">
          <bool>false</bool>
         </property>
         <property name="text">
          <string>Snapshots</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btnDischarge">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>Discharge</string>
         </property>
        </widget>
       </item>

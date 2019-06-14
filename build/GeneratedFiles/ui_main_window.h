@@ -32,8 +32,8 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QPushButton *btnAdd;
+    QPushButton *btnEdit;
     QPushButton *btnSnap;
-    QPushButton *btnDischarge;
     QPushButton *btnDelete;
     QSpacerItem *horizontalSpacer;
     QTableView *tableView;
@@ -61,17 +61,17 @@ public:
 
         horizontalLayout->addWidget(btnAdd);
 
+        btnEdit = new QPushButton(centralWidget);
+        btnEdit->setObjectName(QString::fromUtf8("btnEdit"));
+        btnEdit->setEnabled(false);
+
+        horizontalLayout->addWidget(btnEdit);
+
         btnSnap = new QPushButton(centralWidget);
         btnSnap->setObjectName(QString::fromUtf8("btnSnap"));
         btnSnap->setEnabled(false);
 
         horizontalLayout->addWidget(btnSnap);
-
-        btnDischarge = new QPushButton(centralWidget);
-        btnDischarge->setObjectName(QString::fromUtf8("btnDischarge"));
-        btnDischarge->setEnabled(false);
-
-        horizontalLayout->addWidget(btnDischarge);
 
         btnDelete = new QPushButton(centralWidget);
         btnDelete->setObjectName(QString::fromUtf8("btnDelete"));
@@ -116,8 +116,8 @@ public:
     {
         DataBaseClass->setWindowTitle(QApplication::translate("DataBaseClass", "Patients", nullptr));
         btnAdd->setText(QApplication::translate("DataBaseClass", "Add", nullptr));
+        btnEdit->setText(QApplication::translate("DataBaseClass", "Edit", nullptr));
         btnSnap->setText(QApplication::translate("DataBaseClass", "Snapshots", nullptr));
-        btnDischarge->setText(QApplication::translate("DataBaseClass", "Discharge", nullptr));
         btnDelete->setText(QApplication::translate("DataBaseClass", "Delete", nullptr));
     } // retranslateUi
 

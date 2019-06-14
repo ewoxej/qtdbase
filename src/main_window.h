@@ -16,11 +16,11 @@ public:
    QItemSelection getCurrentSelection();
 public slots:
    void onAddPressed();
+   void onEditPressed();
    void onSnapPressed();
-   void onDischargePressed();
-   void onDischarged();
    void onDeletePressed();
    void onInsertPatient();
+   void onEditPatient();
    void onTableViewItemSelected( QItemSelection, QItemSelection );
 private:
    void dataBaseInit( QString dbname );
@@ -29,6 +29,7 @@ private:
    Ui::DataBaseClass ui;
    AddDialog* m_dialogAdd;
    QSqlDatabase m_Db;
+   int dischargeDialogChoose;
    DischargeDialog* m_dischargeDialog;
    QSqlTableModel* m_DbModel;
    QItemSelection m_curSelect;

@@ -1,8 +1,7 @@
 #include "discharge_dialog.h"
 
 DischargeDialog::DischargeDialog( QWidget *parent )
-   : QDialog( parent )
-{
+   : QDialog( parent ){
    ui.setupUi( this );
    ui.dateEdit->setDate( QDate::currentDate() );
 }

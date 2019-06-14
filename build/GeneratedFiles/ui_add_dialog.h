@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
@@ -45,6 +46,9 @@ public:
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_9;
     QDateEdit *dateEdit_2;
+    QHBoxLayout *horizontalLayout_11;
+    QCheckBox *checkBox;
+    QDateEdit *dateEdit_3;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *okButton;
@@ -56,18 +60,21 @@ public:
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
         Dialog->setWindowModality(Qt::WindowModal);
         Dialog->setEnabled(true);
-        Dialog->resize(400, 230);
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        Dialog->resize(430, 258);
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(Dialog->sizePolicy().hasHeightForWidth());
         Dialog->setSizePolicy(sizePolicy);
-        Dialog->setMinimumSize(QSize(400, 200));
+        Dialog->setMinimumSize(QSize(430, 258));
+        Dialog->setMaximumSize(QSize(430, 258));
         Dialog->setAutoFillBackground(false);
         verticalLayout = new QVBoxLayout(Dialog);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         label_10 = new QLabel(Dialog);
         label_10->setObjectName(QString::fromUtf8("label_10"));
+        sizePolicy.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
+        label_10->setSizePolicy(sizePolicy);
 
         verticalLayout->addWidget(label_10);
 
@@ -190,6 +197,23 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_10);
 
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        horizontalLayout_11->setContentsMargins(5, -1, -1, -1);
+        checkBox = new QCheckBox(Dialog);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+
+        horizontalLayout_11->addWidget(checkBox);
+
+        dateEdit_3 = new QDateEdit(Dialog);
+        dateEdit_3->setObjectName(QString::fromUtf8("dateEdit_3"));
+        dateEdit_3->setEnabled(true);
+
+        horizontalLayout_11->addWidget(dateEdit_3);
+
+
+        verticalLayout->addLayout(horizontalLayout_11);
+
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
@@ -219,7 +243,7 @@ public:
 
     void retranslateUi(QDialog *Dialog)
     {
-        Dialog->setWindowTitle(QApplication::translate("Dialog", "Add...", nullptr));
+        Dialog->setWindowTitle(QApplication::translate("Dialog", "Patient info", nullptr));
         label_10->setText(QApplication::translate("Dialog", "Add a new patient:", nullptr));
         label->setText(QApplication::translate("Dialog", "Name", nullptr));
         label_2->setText(QApplication::translate("Dialog", "Lastname", nullptr));
@@ -227,6 +251,7 @@ public:
         label_4->setText(QApplication::translate("Dialog", "Adress", nullptr));
         label_8->setText(QApplication::translate("Dialog", "Birth Date", nullptr));
         label_9->setText(QApplication::translate("Dialog", "Receipt Date", nullptr));
+        checkBox->setText(QApplication::translate("Dialog", "Discharge date", nullptr));
         okButton->setText(QApplication::translate("Dialog", "Add", nullptr));
         cancelButton->setText(QApplication::translate("Dialog", "Cancel", nullptr));
     } // retranslateUi

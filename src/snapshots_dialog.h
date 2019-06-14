@@ -17,7 +17,8 @@ enum PatientsIndexes
    eDB_DischargeDate
 };
 
-enum SnapshotsIndexes {
+enum SnapshotsIndexes
+{
    eSI_ID,
    eSI_FilePath,
    eSI_SnapDate,

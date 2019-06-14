@@ -2,6 +2,7 @@
 
 #include <QObject>
 #include <qmessagebox.h>
+#include <qitemselectionmodel.h>
 #include "ui_add_dialog.h"
 
 struct PatientInfo
@@ -12,6 +13,7 @@ struct PatientInfo
    QString adress;
    QDate birthDate;
    QDate receiptDate;
+   QDate dischargeDate;
 };
 class AddDialog : public QDialog
 {
@@ -20,6 +22,7 @@ class AddDialog : public QDialog
 public:
    AddDialog( QWidget* parent = Q_NULLPTR );
    PatientInfo getInfo();
+   void prepareForEdit(QItemSelection* itm);
    ~AddDialog();
 public slots:
    void accept();

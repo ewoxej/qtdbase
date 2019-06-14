@@ -115,7 +115,6 @@
   <ItemGroup>
     <ClCompile Include="../src/add_dialog.cpp" />
     <ClCompile Include="../src/main_window.cpp" />
-    <ClCompile Include="../src/discharge_dialog.cpp" />
     <ClCompile Include="../src/main.cpp" />
     <ClCompile Include="../src/snapshots_dialog.cpp" />
   </ItemGroup>
@@ -128,9 +127,6 @@
   <ItemGroup>
     <QtUic Include="../res/main_window.ui" />
     <QtUic Include="../res/add_dialog.ui" />
-    <QtUic Include="../res/discharge_dialog.ui">
-      <SubType>Designer</SubType>
-    </QtUic>
     <QtUic Include="../res/snapshots_dialog.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -144,12 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="../src/snapshots_dialog.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets</IncludePath>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="../src/discharge_dialog.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWidgets</IncludePath>
     </QtMoc>

@@ -30,52 +30,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="../src/add_dialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="snapshots_dialog.cpp">
+    <ClCompile Include="../src/main_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="discharge_dialog.cpp">
+    <ClCompile Include="../src/main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="add_dialog.cpp">
+    <ClCompile Include="../src/snapshots_dialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="snapshots_dialog.h">
+    <QtMoc Include="../src/main_window.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="discharge_dialog.h">
+    <QtMoc Include="../src/add_dialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="main_window.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="add_dialog.h">
+    <QtMoc Include="../src/snapshots_dialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="add_dialog.ui">
+    <QtUic Include="../res/main_window.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="main_window.ui">
+    <QtUic Include="../res/add_dialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="discharge_dialog.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="snapshots_dialog.ui">
+    <QtUic Include="../res/snapshots_dialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="DataBase.qrc">
+    <QtRcc Include="../res/DataBase.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
