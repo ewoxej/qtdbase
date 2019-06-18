@@ -1,7 +1,7 @@
 #include "main_window.h"
 
 MainWindow::MainWindow( QWidget *parent )
-   : QMainWindow( parent ),m_dischargeDialog(NULL)
+   : QMainWindow( parent )
 {
    dataBaseInit( "patients.db" );
    setUiInit();

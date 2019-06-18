@@ -17,25 +17,32 @@ void AddDialog::accept()
    m_newPatient.receiptDate = ui.dateEdit_2->date();
    if (ui.checkBox->checkState() == Qt::Checked)
       m_newPatient.dischargeDate = ui.dateEdit_3->date();
-   if (m_newPatient.name == "" || m_newPatient.lastname == "" || m_newPatient.patronymic == "" || m_newPatient.adress == "")
+   if (m_newPatient.name.isEmpty() || m_newPatient.lastname.isEmpty() || m_newPatient.patronymic.isEmpty() || m_newPatient.adress.isEmpty())
    {
       QMessageBox* msgb = new QMessageBox( this );
       msgb->setText( "All fields must be filled!" );
       msgb->show();
       return;
    }
-   QRegExp forbSymbols ("[0-9]");
-   if (m_newPatient.name.contains(forbSymbols) || m_newPatient.lastname.contains( forbSymbols ) || m_newPatient.patronymic.contains( forbSymbols ) )
+   int pos = 0;
+   QRegExpValidator validator( static_cast<QRegExp>( "[a-zA-Z-]+" ) );
+   QRegExpValidator adressValidator( static_cast<QRegExp>( "[a-zA-Z0-9.,// ]*" ) );
+   if (
+      validator.validate( m_newPatient.name, pos ) == QValidator::Invalid ||
+      validator.validate( m_newPatient.lastname, pos ) == QValidator::Invalid ||
+      validator.validate( m_newPatient.patronymic, pos ) == QValidator::Invalid ||
+      adressValidator.validate( m_newPatient.adress, pos ) == QValidator::Invalid
+      )
    {
       QMessageBox* msgb = new QMessageBox( this );
-      msgb->setText( "You can`t enter digits!" );
+      msgb->setText( "You`re entered invalid symbols!" );
       msgb->show();
       return;
    }
-   if (m_newPatient.receiptDate < m_newPatient.birthDate ||
-      (m_newPatient.dischargeDate < m_newPatient.receiptDate ||
-      m_newPatient.dischargeDate>QDate::currentDate()) && (ui.checkBox->isChecked()) ||
-      m_newPatient.birthDate>QDate::currentDate() ||
+   if ( m_newPatient.receiptDate < m_newPatient.birthDate ||
+      ( m_newPatient.dischargeDate < m_newPatient.receiptDate ||
+        m_newPatient.dischargeDate > QDate::currentDate() ) && ( ui.checkBox->isChecked() ) ||
+      m_newPatient.birthDate > QDate::currentDate() ||
       m_newPatient.receiptDate > QDate::currentDate())
    {
       QMessageBox* msgb = new QMessageBox( this );

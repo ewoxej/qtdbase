@@ -4,7 +4,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtSql>
 #include "add_dialog.h"
-#include "discharge_dialog.h"
 #include "snapshots_dialog.h"
 #include "ui_main_window.h"
 
@@ -30,7 +29,6 @@ private:
    AddDialog* m_dialogAdd;
    QSqlDatabase m_Db;
    int dischargeDialogChoose;
-   DischargeDialog* m_dischargeDialog;
    QSqlTableModel* m_DbModel;
    QItemSelection m_curSelect;
 };
